@@ -26,15 +26,11 @@
 
 (add-hook 'before-save-hook #'lsz-org-buffer-update-modified-property)
 
-;; (setq org-startup-truncated nil)
+(setq org-goto-auto-isearch nil)
 (setq org-support-shift-select t)
 
 (setq org-use-sub-superscripts '{})
-
-(setq org-use-fast-todo-selection t)
-(setq org-todo-keywords '((sequence "TODO(t)" "DOING(i)"
-                                    "|"
-                                    "DONE(d)" "ABORT(a)")))
+(setq org-export-with-sub-superscripts '{})
 
 (defun lsz-org-html-src-block-customized (src-block _contents info)
   "Transcode a SRC-BLOCK element from Org to HTML.
