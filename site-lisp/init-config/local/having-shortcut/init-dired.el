@@ -5,6 +5,8 @@
 
 ;;; Code:
 
+(setq dired-listing-switches "-alh1v --group-directories-first")
+
 ;; dired-subtree
 (setq dired-subtree-cycle-depth 3) ;; default 3
 (setq dired-subtree-use-backgrounds t)
