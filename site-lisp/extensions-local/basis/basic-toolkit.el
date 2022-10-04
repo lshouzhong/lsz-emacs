@@ -93,14 +93,14 @@ If not select any area, then strip current buffer"
           (comment-indent)
         (goto-char end)))))
 
-(defun upcase-char (arg)
-  "Uppercase for character."
+(defun capitalize-one-char (arg)
+  "Change the letter pointed by the cursor to uppercase."
   (interactive "P")
   (upcase-region (point) (+ (point) (or arg 1)))
   (forward-char (or arg 1)))
 
-(defun downcase-char (arg)
-  "Downcase for character."
+(defun lowercase-one-char (arg)
+  "Change the letter pointed by the cursor to lowercase."
   (interactive "P")
   (downcase-region (point) (+ (point) (or arg 1)))
   (forward-char (or arg 1)))
@@ -267,10 +267,18 @@ Otherwise return nil."
     (message (format "Total: %d (CN: %d, EN: %d) words, %d bytes."
                      total-word cn-word en-word total-byte))))
 
-(defun goto-percent (percent)
-  "Goto PERCENT of buffer."
-  (interactive "nGoto percent: ")
+(defun goto-percent-text (percent)
+  "Move the cursor to the character,
+  which is <percent>% far from the top character."
+  (interactive "n(text) Goto percent: ")
   (goto-char (/ (* percent (point-max)) 100)))
+
+(defun goto-percent-line (percent)
+  "Move the cursor to the line,
+  which is <percent>% far from the top line."
+  (interactive "n(line) Goto percent: ")
+  (goto-line (/ (* percent (count-lines (point-min) (point-max)))
+                100)))
 
 (defun replace-match+ (object match-str replace-str)
   "Replace `MATCH-STR' of `OBJECT' with `REPLACE-STR'."
@@ -287,25 +295,10 @@ Otherwise return nil."
   (interactive)
   (scroll-down 1))
 
-(defun refresh-file ()
-  "Automatic reload current file."
-  (interactive)
-  (cond ((eq major-mode 'emacs-lisp-mode)
-         (indent-buffer)
-         (indent-comment-buffer)
-         (save-buffer)
-         (load-file (buffer-file-name)))
-        ((member major-mode '(lisp-mode c-mode perl-mode))
-         (indent-buffer)
-         (indent-comment-buffer)
-         (save-buffer))
-        ((member major-mode '(haskell-mode sh-mode))
-         (indent-comment-buffer)
-         (save-buffer))
-        ((derived-mode-p 'scss-mode)
-         (require 'css-sort)
-         (css-sort))
-        (t (message "Current mode is not supported, so not reload"))))
+(defun revert-buffer-no-confirm ()
+    "Revert buffer without confirmation."
+    (interactive)
+    (revert-buffer :ignore-auto :noconfirm))
 
 (defun cycle-buffer-in-special-mode (special-mode)
   "Cycle in special mode."

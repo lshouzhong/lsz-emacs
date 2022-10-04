@@ -84,7 +84,8 @@
    ("C-c r" . rename-file-and-buffer)
    ("C-c D" . delete-file-and-buffer)
    ("M-0" . indent-buffer)
-   ("M-z" . upcase-char)      ;Upcase char handly with capitalize-word
+   ("C-x c u" . capitalize-one-char)
+   ("C-x c l" . lowercase-one-char)
    ("C-x l" . mark-line)
    ("s-k" . kill-and-join-forward)      ;在缩进的行之间删除
    ("M-G" . goto-column)
@@ -92,12 +93,13 @@
    ("C-<" . cursor-position-1-jump)       ;; jump to cursor position
    ("M-s-," . cursor-position-stack-pop)  ;; move corsor to the position popped from cursor-position-stack
    ("M-s-." . cursor-position-stack-push) ;; push cursor position to cursor-position-stack
-   ("s-g" . goto-percent)    ;跳转到当前Buffer的文本百分比, 单位为字符
-   ("s-j" . scroll-up-one-line)         ;向上滚动一行
-   ("s-k" . scroll-down-one-line)       ;向下滚动一行
-   ("<f2>" . refresh-file)              ;自动刷新文件
-   ("s-f" . find-file-root)             ;用root打开文件
-   ("s-r" . find-file-smb)              ;访问sambao
+   ("C-c g t" . goto-percent-text)
+   ("C-c g l" . goto-percent-line)
+   ("s-j" . scroll-up-one-line)
+   ("s-k" . scroll-down-one-line)
+   ("<f2>" . revert-buffer-no-confirm)  ;; reload file without confirm
+   ("s-f" . find-file-root)             ;; open file in root
+   ("s-r" . find-file-smb)              ;; visit sambao
    )
  "basic-toolkit")
 ;; --- delete-block
