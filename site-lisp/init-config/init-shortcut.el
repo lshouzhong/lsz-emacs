@@ -108,6 +108,14 @@
    ("M-M" . delete-block-forward)
    )
  "delete-block")
+;; --- echo-keys
+;; - 显示按键记录
+(lazy-load-global-keys
+ '(
+   ("C-c e e" . toggle-echo-keys)
+   ("C-c e c" . echo-keys-clean)
+  )
+ "echo-keys")
 ;; --- evals
 (lazy-load-global-keys
  '(
