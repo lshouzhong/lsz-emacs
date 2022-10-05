@@ -37,7 +37,7 @@ Put the content below to `~/.emacs.d/init.el` ( equals to `C:\Users\<username>\A
 ### Debian / Ubuntu
 
 ```plaintext
-# color-rg
+# for counsel-rg
 sudo apt install ripgrep
 
 # lsp-bridge python dependences
