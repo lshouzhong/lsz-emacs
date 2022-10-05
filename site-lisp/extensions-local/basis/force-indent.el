@@ -3,13 +3,13 @@
 
 ;;; Code:
 
-(defvar force-indent-size tab-width)
+;; use variable 'tab-width' value as indent size
 
 (defun force-indent-line ()
   (let (col)
     (save-excursion
       (back-to-indentation)
-      (setq col (+ (current-column) force-indent-size))
+      (setq col (+ (current-column) tab-width))
       (indent-line-to col))
     (when (< (current-column) col)
       (back-to-indentation))))
@@ -38,7 +38,7 @@
   (let (col)
     (save-excursion
       (back-to-indentation)
-      (setq col (- (current-column) force-indent-size))
+      (setq col (- (current-column) tab-width))
       (when (>= col 0)
         (indent-line-to col)))))
 

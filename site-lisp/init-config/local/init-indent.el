@@ -1,13 +1,12 @@
 ;; -*- coding: utf-8; -*-
 ;;; Require:
-;; (require 'force-indent)
 
 ;;; Code:
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 4)
 
 (defun adjust-languages-indent (n)
-  (setq force-indent-size n)
+  (setq-default tab-width n)
 
   (setq-local c-basic-offset n)
 
@@ -52,6 +51,6 @@
                      (adjust-languages-indent 2)
                      )))
 
-(provide 'init-force-indent)
+(provide 'init-indent)
 
-;;; init-force-indent.el ends here
+;;; init-indent.el ends here

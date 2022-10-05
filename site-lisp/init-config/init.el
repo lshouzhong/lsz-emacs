@@ -52,7 +52,7 @@
   (require 'init-auto-save)
   (require 'init-coding-system)
   (require 'init-dired)
-  (require 'init-force-indent)
+  (require 'init-indent)
   (require 'init-generic)
   (require 'init-highlight-parentheses)
   (require 'init-idle)

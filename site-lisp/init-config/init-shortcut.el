@@ -131,7 +131,7 @@
    ("C-," . lsz-un-indent)
    ("C-." . lsz-indent)
    )
- "init-force-indent")
+ "force-indent")
  ;; --- goto-last-change
 ;; - 定位光标到最后编辑的地方
 (lazy-load-global-keys
