@@ -26,6 +26,8 @@
 
 (add-hook 'before-save-hook #'lsz-org-buffer-update-modified-property)
 
+(setq org-startup-indented t) ;; enable org-indent-mode at start
+
 (setq org-goto-auto-isearch nil)
 (setq org-support-shift-select t)
 
