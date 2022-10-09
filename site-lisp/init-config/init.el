@@ -60,6 +60,7 @@
   (if (not noninteractive) ;; disable lsp when export org site
     (require 'init-lsp-bridge))
   (require 'init-mode)
+  (require 'init-org-todo)
   (require 'init-org)
   (require 'init-proxy)
   (require 'init-time)

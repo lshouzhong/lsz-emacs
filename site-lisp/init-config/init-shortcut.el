@@ -1,5 +1,18 @@
 ;; -*- coding: utf-8; -*-
 
+;;; There are 5 top sections:
+;;; - unset keys
+;;; - extensions
+;;; - extensions-local
+;;; - shortcut on functions in init-*.el
+;;; - shortcut on built-in function
+
+;;; level 1 section start with 12 dash
+;;; level 2 section start with 6 dash
+;;; level 3 section start with 3 dash
+;;; level 4 section start with 1 dash
+
+;;; ------------ unset keys
 (lazy-load-unset-keys
  '("C-z" "C-q" "s-W" "C-\\" "s-c"
    "s-z" "s-x" "s-v" "M-h" "C-6"))
@@ -162,7 +175,7 @@
    )
  "toggle-one-window")
 
-;; --- watch-next-window
+;; ------ watch-next-window
 ;; "up" to see previous content
 ;; "down" to see further content
 (lazy-load-global-keys
@@ -176,20 +189,26 @@
 
 
 
+;;; ------------ shortcut on functions in init-*.el
+
+;; ------ init-session
 (lazy-load-set-keys
  '(
-   ("C-z l" . display-line-numbers-mode)
-   ("s--" . text-scale-decrease)        ;; smaller fonts
-   ("s-=" . text-scale-increase)        ;; bigger fonts
-   ("<f5>" . emacs-session-save)        ;; exit emacs
-   ("s-," . bury-buffer)
-   ("s-." . unbury-buffer)
-   ("C-s-q" . quoted-insert)            ;; read a input from keyboard and insert
-   ("M-h" . set-mark-command) ;Instead C-Space for Chinese input method
-   ("M-;" . comment-dwim)
+   ("<f5>" . emacs-session-save)
    ))
 
-;; -- move cursors in current buffer
+
+
+;;; ------------ shortcut on built-in function
+
+;; ------ org related
+(lazy-load-set-keys
+ '(
+   ("C-c c" . org-capture)
+   ("C-c a" . org-agenda)
+   ))
+
+;; ------ move cursors in current buffer
 (lazy-load-set-keys
  '(
    ("M-g k" . beginning-of-buffer)
@@ -202,6 +221,19 @@
    ("M-g i" . down-list)                ;向右跳进 LIST
    ("M-g a" . beginning-of-defun)       ;函数开头
    ("M-g e" . end-of-defun)             ;函数末尾
+   ))
+
+;; ------ other
+(lazy-load-set-keys
+ '(
+   ("C-z l" . display-line-numbers-mode)
+   ("s--" . text-scale-decrease)    ;; smaller fonts
+   ("s-=" . text-scale-increase)    ;; bigger fonts
+   ("s-," . bury-buffer)
+   ("s-." . unbury-buffer)
+   ("C-s-q" . quoted-insert)        ;; read a input from keyboard and insert
+   ("M-h" . set-mark-command) ;Instead C-Space for Chinese input method
+   ("M-;" . comment-dwim)
    ))
 
 
