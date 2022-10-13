@@ -96,6 +96,7 @@
  '(
    ("C-c r" . rename-file-and-buffer)
    ("C-c D" . delete-file-and-buffer)
+   ("s-w" . toggle-window-split)
    ("M-0" . indent-buffer)
    ("C-x c u" . capitalize-one-char)
    ("C-x c l" . lowercase-one-char)

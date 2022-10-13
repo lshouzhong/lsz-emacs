@@ -1,5 +1,6 @@
 ;; -*- coding: utf-8; -*-
 ;;; Require:
+(require 'dired-display-buffer)
 (require 'dired-narrow)
 (require 'dired-subtree)
 
@@ -19,6 +20,8 @@
 
 (lazy-load-set-keys
  '(
+   ;; dired-display-buffer
+   ("o" . dired-display-buffer)
    ;; dired-narrow
    ("/" . dired-narrow)
    ;; dired-subtree
