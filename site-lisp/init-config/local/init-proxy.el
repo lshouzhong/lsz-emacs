@@ -1,7 +1,6 @@
 ;; -*- coding: utf-8; -*-
 ;;; Require
 
-
 ;;; Code:
 
 (defun proxy-socks-show ()
@@ -19,8 +18,8 @@
   (require 'socks)
   (setq url-gateway-method 'socks
         socks-noproxy '("localhost")
-        socks-server '("Default server" "127.0.0.1" 10808 5))
-  (setenv "all_proxy" "socks5://127.0.0.1:10808")
+        socks-server '("Default server" "127.0.0.1" 10886 5))
+  (setenv "all_proxy" "socks5://127.0.0.1:10886")
   (proxy-socks-show))
 
 (defun proxy-socks-disable ()
@@ -40,7 +39,7 @@
       (proxy-socks-disable)
     (proxy-socks-enable)))
 
-;; (proxy-socks-enable)
+(proxy-socks-enable)
 
 (provide 'init-proxy)
 

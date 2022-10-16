@@ -103,8 +103,8 @@
    ("C-x l" . mark-line)
    ("s-k" . kill-and-join-forward)      ;在缩进的行之间删除
    ("M-G" . goto-column)
-   ("C->" . cursor-position-1-store)      ;; store cursor position
-   ("C-<" . cursor-position-1-jump)       ;; jump to cursor position
+   ("C-\"" . cursor-position-1-store)      ;; store cursor position
+   ("C-:" . cursor-position-1-jump)       ;; jump to cursor position
    ("M-s-," . cursor-position-stack-pop)  ;; move corsor to the position popped from cursor-position-stack
    ("M-s-." . cursor-position-stack-push) ;; push cursor position to cursor-position-stack
    ("C-c g t" . goto-percent-text)

@@ -55,3 +55,6 @@
 [submodule "site-lisp/extensions/rime"]
 	path = site-lisp/extensions/rime
 	url = https://github.com/DogLooksGood/emacs-rime.git
+[submodule "site-lisp/extensions/modus-themes"]
+	path = site-lisp/extensions/modus-themes
+	url = https://github.com/protesilaos/modus-themes.git

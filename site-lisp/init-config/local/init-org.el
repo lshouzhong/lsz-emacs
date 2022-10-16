@@ -26,13 +26,33 @@
 
 (add-hook 'before-save-hook #'lsz-org-buffer-update-modified-property)
 
-(setq org-startup-indented t) ;; enable org-indent-mode at start
+(setq org-startup-indented nil) ;; enable org-indent-mode at start, default nil.
 
 (setq org-goto-auto-isearch nil)
 (setq org-support-shift-select t)
 
 (setq org-use-sub-superscripts '{})
 (setq org-export-with-sub-superscripts '{})
+
+;; (set-face-attribute 'org-level-1 nil
+;;                     :background "#fdf0ff"
+;;                     :foreground "#000000"
+;;                     :overline "#bcbcbc"
+;;                     :bold t
+;;                     :height 1.3)
+;; (set-face-attribute 'org-level-2 nil
+;;                     :foreground "#8f0075"
+;;                     :overline "#bcbcbc"
+;;                     :bold t
+;;                     :height 1.1)
+;; (set-face-attribute 'org-level-3 nil
+;;                     :weight 'semi-bold)
+;; (set-face-attribute 'org-level-4 nil
+;;                     :weight 'semi-bold)
+;; (set-face-attribute 'org-level-5 nil
+;;                     :weight 'semi-bold)
+;; (set-face-attribute 'org-level-6 nil
+;;                     :weight 'semi-bold)
 
 (defun lsz-org-html-src-block-customized (src-block _contents info)
   "Transcode a SRC-BLOCK element from Org to HTML.

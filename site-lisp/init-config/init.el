@@ -33,18 +33,7 @@
     (setq w32-apps-modifier 'hyper) ; Menu/App key
     (w32-register-hot-key [H-]))
 
-  ;; font
-  (when (and window-system *win64*)
-    (let ((default-font (font-spec :name "Sarasa Mono SC"))
-          (cn-font (font-spec :name "Sarasa Mono SC")))
-      (set-face-attribute 'default nil :font default-font :height 116)
-      (dolist (charset '(kana han symbol cjk-misc bopomofo))
-        (set-fontset-font t charset cn-font)))
-    (set-face-font 'fixed-pitch "Sarasa Mono SC"))
-
   ;; from local extensions
-  (require 'lsz-themes)
-  (lsz-themes-load-style 'light)
   (require 'basic-toolkit)
   (require 'browse-kill-ring)
   (require 'lazy-load)
@@ -66,6 +55,8 @@
   (require 'init-time)
   (require 'init-undo-tree)
 
+  (require 'init-theme)
+  
   ;; from submodules
   (require 'init-markdown-mode)
   (require 'init-rime)

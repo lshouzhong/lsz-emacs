@@ -5,7 +5,7 @@
 (defun jump-to-import()
   (interactive)
   ;; Rember position before jump.
-  (remember-init)
+  (cursor-position-1-store)
   ;; Jump to `import ...` position.
   (goto-char (point-min))
   (search-forward-regexp "\\(^import\\|^from\\)" nil t)
