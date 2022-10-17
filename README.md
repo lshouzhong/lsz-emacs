@@ -1,6 +1,6 @@
-## Install elisp files
+# Install elisp files
 
-### Debian / Ubuntu
+## Debian / Ubuntu
 
 Clone this repo to home path.
 
@@ -22,7 +22,7 @@ Initialize submodules:
 cd ~/lsz-emacs && git submodule update --init --recursive
 ```
 
-### Windows
+## Windows
 
 Clone this repo to `C:\Users\<username>\AppData\Roaming\lsz-emacs` and initialize submodules.
 
@@ -32,30 +32,40 @@ Put the content below to `~/.emacs.d/init.el` ( equals to `C:\Users\<username>\A
 (load-file "~/lsz-emacs/site-start.el")
 ```
 
-## Install dependencies for extensions
+# Install dependencies for extensions
 
-### Debian / Ubuntu
+## Debian / Ubuntu
 
 ```plaintext
-# for counsel-rg
+## for counsel-rg
 sudo apt install ripgrep
 
-# lsp-bridge python dependences
+## lsp-bridge python dependences
+sudo apt install python3-pip
 pip install epc orjson
 
-# lsp-bridge python lsp server
+## lsp-bridge python lsp server
 pip install pyright
 
-# emacs-rime
-# usually I use ibus-rime in gnome
-# opencc available, lua extension unavailable
+## lsp-bridge npm packages
+# install npm manually
+npm i -g pyright # for python
+npm i -g typescript typescript-language-server # for js/ts
+npm i -g vscode-langservers-extracted # for HTML/CSS/JSON/ESLint 
+npm i -g yaml-language-server # for yaml
+
+## emacs-rime
+## use ibus-rime in gnome
+## note: opencc available, lua extension unavailable
 sudo apt install librime-dev
 sudo apt install ibus-rime
 ```
 
-### Windows
+Note: Emacs will load ~/.profile for env variables at the start. According to the code in ~/.profile, emacs will not load ~/.bashrc. So if user wish to add some env variables, the code should be written to ~/.profile.
 
-Download the python packages previous section listed.
+## Windows
+
+Install nodejs and python. Then install the npm and python packages previous section listed.
 
 Download the ripgrep for windows from [ripgrep](https://github.com/BurntSushi/ripgrep) and add the .exe file to env variable `Path`.
 

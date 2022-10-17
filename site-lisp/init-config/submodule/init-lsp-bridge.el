@@ -9,7 +9,7 @@
 ;; disable wen ( chinese ) lsp-server for org-mode
 (assq-delete-all 'org-mode lsp-bridge-single-lang-server-mode-list)
 
-;; ;; disable yasnippet completion
+;; disable yasnippet completion
 (setq acm-enable-yas nil)
 
 ;; (setq acm-enable-tabnine-helper nil)

@@ -58,3 +58,6 @@
 [submodule "site-lisp/extensions/modus-themes"]
 	path = site-lisp/extensions/modus-themes
 	url = https://github.com/protesilaos/modus-themes.git
+[submodule "site-lisp/extensions/yaml-mode"]
+	path = site-lisp/extensions/yaml-mode
+	url = https://github.com/yoshiki/yaml-mode.git

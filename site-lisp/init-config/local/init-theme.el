@@ -3,7 +3,6 @@
 (require 'modus-themes)
 
 ;;; Code:
-
 ;; font
 (when (and window-system *win64*)
   (let ((default-font (font-spec :name "Sarasa Mono SC"))

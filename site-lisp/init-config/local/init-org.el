@@ -46,13 +46,47 @@
 ;;                     :bold t
 ;;                     :height 1.1)
 ;; (set-face-attribute 'org-level-3 nil
+;;                     :foreground "#093060"
 ;;                     :weight 'semi-bold)
 ;; (set-face-attribute 'org-level-4 nil
+;;                     :foreground "#184034"
 ;;                     :weight 'semi-bold)
 ;; (set-face-attribute 'org-level-5 nil
+;;                     :foreground "#61284f"
 ;;                     :weight 'semi-bold)
 ;; (set-face-attribute 'org-level-6 nil
+;;                     :foreground "#3f3000"
 ;;                     :weight 'semi-bold)
+;; (set-face-attribute 'org-level-7 nil
+;;                     :foreground "#5f0000"
+;;                     :weight 'semi-bold)
+;; (set-face-attribute 'org-level-8 nil
+;;                     :foreground "#541f4f"
+;;                     :weight 'semi-bold)
+
+;; (set-face-attribute 'org-block-begin-line nil
+;;                     :background "#f0f0f0"
+;;                     :foreground "#505050"
+;;                     :extend t)
+;; (set-face-attribute 'org-block nil
+;;                     :background "#f8f8f8"
+;;                     :foreground "#000000"
+;;                     :extend t
+;;                     )
+;; (set-face-attribute 'org-block-end-line nil
+;;                     :background "#f0f0f0"
+;;                     :foreground "#505050"
+;;                     :extend t)
+
+;; (set-face-attribute 'org-code nil
+;;                     :background "#f0f0f0"
+;;                     :foreground "#005a5f"
+;;                     :extend t)
+
+;; (set-face-attribute 'org-verbatim nil
+;;                     :background "#f0f0f0"
+;;                     :foreground "#8f0075"
+;;                     :extend t)
 
 (defun lsz-org-html-src-block-customized (src-block _contents info)
   "Transcode a SRC-BLOCK element from Org to HTML.

@@ -37,7 +37,8 @@
   (require 'basic-toolkit)
   (require 'browse-kill-ring)
   (require 'lazy-load)
-
+  (require 'init-theme)
+  
   (require 'init-auto-save)
   (require 'init-coding-system)
   (require 'init-dired)
@@ -54,9 +55,7 @@
   (require 'init-proxy)
   (require 'init-time)
   (require 'init-undo-tree)
-
-  (require 'init-theme)
-  
+ 
   ;; from submodules
   (require 'init-markdown-mode)
   (require 'init-rime)

@@ -39,7 +39,7 @@
       (proxy-socks-disable)
     (proxy-socks-enable)))
 
-(proxy-socks-enable)
+;; (proxy-socks-enable)
 
 (provide 'init-proxy)
 
