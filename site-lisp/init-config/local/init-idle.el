@@ -26,7 +26,6 @@
 (setq history-delete-duplicates t)      ;删除minibuffer的重复历史
 (setq minibuffer-message-timeout 1)     ;显示消息超时的时间
 (setq auto-revert-mode 1)               ;自动更新buffer
-(show-paren-mode t)                     ;显示括号匹配
 (setq show-paren-style 'parentheses) ;括号匹配显示但不是烦人的跳到另一个括号。
 (setq blink-matching-paren nil)      ;当插入右括号时不显示匹配的左括号
 (setq message-log-max t)         ;设置message记录全部消息, 而不用截去
