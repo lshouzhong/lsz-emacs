@@ -81,7 +81,7 @@
 ;; ------ rime
 (lazy-load-global-keys
  '(
-   ("C-c \\" . toggle-input-method)
+   ("C-c C-\\" . toggle-input-method)
    )
  "init-rime")
 

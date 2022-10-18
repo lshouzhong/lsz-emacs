@@ -69,4 +69,10 @@ Install nodejs and python. Then install the npm and python packages previous sec
 
 Download the ripgrep for windows from [ripgrep](https://github.com/BurntSushi/ripgrep) and add the .exe file to env variable `Path`.
 
-For emacs-rime, see [Weasel](https://github.com/rime/weasel). Then deploy you own rime configs. But if you use liberime/librime.dll for librime-emacs lib, opencc and lua extension are unavailable.
+For emacs-rime in Windows ( see [Weasel](https://github.com/rime/weasel) for rime config ):
+
+- This config will use `C:\Users\<username>\AppData\Roaming\Rime` as *share-data-dir* ( see `init-rime.el` ).
+- This config contains a pre compiled `lsz-emacs/site-lisp/rime/librime-emacs-pre-compiled-win64/librime-emacs.dll` for emacs-rime package.
+- *librime-emacs.dll* should be in `lsz-emacs/site-lisp/extensions/rime/` which is emacs-rime root path.
+- If you use *librime.dll* of *liberime* ( `lsz-emacs/site-lisp/rime/liberime-v0.0.6-win64/librime.dll` ) for librime-emacs lib file, opencc and lua extension are unavailable.
+- *librime.dll* should be in emacs bin path. e.g. `C:\Program Files\Emacs\emacs-28.2\bin\`

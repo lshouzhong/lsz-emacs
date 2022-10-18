@@ -8,8 +8,7 @@
 
 (if window-system
     (setq rime-show-candidate 'posframe)
-  (setq rime-show-candidate 'message)
-)
+  (setq rime-show-candidate 'message))
 
 ;; set 'rime-share-data-dir' and 'rime-user-data-dir'
 (when *win64*
@@ -24,51 +23,46 @@
 ;; auto-disable
 (setq rime-disable-predicates
       '(rime-predicate-prog-in-code-p
-      rime-predicate-after-alphabet-char-p
-      rime-predicate-ace-window-p))
+        rime-predicate-after-alphabet-char-p
+        rime-predicate-ace-window-p))
 
 ;; (setq rime-inline-ascii-trigger 'shift-l)
 ;; (setq rime-inline-predicates
 ;;       '(rime-predicate-space-after-cc-p
 ;;       ))
 
-;; rime posframe box theme
-(setq rime-posframe-properties
-      (list :background-color "#333333"
-            :foreground-color "#dcdccc"
-            :internal-border-width 6
-            ;; :font "sarasa mono sc"
-            ))
-;; (set-face-attribute 'rime-default-face       nil :foreground "#81a1c1" :background "#3d424d")
-;; (set-face-attribute 'rime-code-face          nil :foreground "#5e81ac" :background nil)
-;; (set-face-attribute 'rime-candidate-num-face nil :foreground "#5e81ac" :background nil)
+;; rime posframe box style
+(setq rime-posframe-properties (list :internal-border-width 1))
+;; (set-face-attribute 'rime-default-face       nil :foreground "#333333" :background "#dcdccc")
+;; (set-face-attribute 'rime-code-face          nil :foreground "#333333" :background nil)
+;; (set-face-attribute 'rime-candidate-num-face nil :foreground "#333333" :background nil)
 ;; (set-face-attribute 'rime-comment-face       nil :foreground "#8fbcbb" :background nil)
-(set-face-attribute 'rime-highlight-candidate-face nil :foreground "#008800" :background nil)
+;; (set-face-attribute 'rime-highlight-candidate-face nil :foreground "#333333" :background nil)
 
 (defun lsz-rime-convert-string-at-point (&optional return-cregexp)
   "input the string before the cursor to rime."
   (interactive "P")
   (let ((string (if mark-active
                     (buffer-substring-no-properties
-                      (region-beginning) (region-end))
+                     (region-beginning) (region-end))
                   (buffer-substring-no-properties
-                    (point) (max (line-beginning-position) (- (point) 80)))))
+                   (point) (max (line-beginning-position) (- (point) 80)))))
         code
         length)
     (cond ((string-match "\\([a-z'-]+\\|[[:punct:]]\\) *$" string)
-            (setq code (replace-regexp-in-string
-                        "^[-']" ""
-                        (match-string 0 string)))
-            (setq length (length code))
-            (setq code (replace-regexp-in-string " +" "" code))
-            (if mark-active
-                (delete-region (region-beginning) (region-end))
-              (when (> length 0)
-                (delete-char (- 0 length))))
-            (when (> length 0)
-              (setq unread-command-events
-                    (append (listify-key-sequence code)
-                            unread-command-events))))
+           (setq code (replace-regexp-in-string
+                       "^[-']" ""
+                       (match-string 0 string)))
+           (setq length (length code))
+           (setq code (replace-regexp-in-string " +" "" code))
+           (if mark-active
+               (delete-region (region-beginning) (region-end))
+             (when (> length 0)
+               (delete-char (- 0 length))))
+           (when (> length 0)
+             (setq unread-command-events
+                   (append (listify-key-sequence code)
+                           unread-command-events))))
           (t (message "`lsz-rime-convert-string-at-point' did nothing.")))))
 
 (lazy-load-set-keys
