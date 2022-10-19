@@ -2,11 +2,11 @@
 ;;; Require:
 
 ;;; Code:
-(setq-default indent-tabs-mode nil)
+;;(setq-default indent-tabs-mode nil)
 (setq-default tab-width 4)
 
 (defun adjust-languages-indent (n)
-  (setq-default tab-width n)
+  (setq-local tab-width n)
 
   (setq-local c-basic-offset n)
 

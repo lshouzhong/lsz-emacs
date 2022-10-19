@@ -94,8 +94,8 @@ The test for presence of the car of ELT-CONS is done with `equal'."
 ;;; Mode load.
 (autoload 'cmake-mode "cmake-mode")
 (autoload 'css-mode "css-mode")
-(autoload 'go-mode "init-go-mode")
-(autoload 'json-mode "json-mode")
+(autoload 'go-mode "init-golang")
+(autoload 'json-mode "init-json")
 (autoload 'js2-mode "js2-mode")
 (autoload 'lua-mode "init-lua")
 (autoload 'markdown-mode "init-markdown-mode")

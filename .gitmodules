@@ -22,12 +22,6 @@
 [submodule "site-lisp/extensions/lsp-bridge"]
 	path = site-lisp/extensions/lsp-bridge
 	url = https://github.com/manateelazycat/lsp-bridge.git
-[submodule "site-lisp/extensions/json-mode"]
-	path = site-lisp/extensions/json-mode
-	url = https://github.com/joshwnj/json-mode.git
-[submodule "site-lisp/extensions/json-snatcher"]
-	path = site-lisp/extensions/json-snatcher
-	url = https://github.com/Sterlingg/json-snatcher.git
 [submodule "site-lisp/extensions/go-mode"]
 	path = site-lisp/extensions/go-mode
 	url = https://github.com/dominikh/go-mode.el.git

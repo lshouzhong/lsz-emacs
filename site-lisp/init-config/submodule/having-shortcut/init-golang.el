@@ -19,6 +19,6 @@
    )
  go-mode-map)
 
-(provide 'init-go-mode)
+(provide 'init-golang)
 
-;;; init-go-mode.el ends here
+;;; init-golang.el ends here

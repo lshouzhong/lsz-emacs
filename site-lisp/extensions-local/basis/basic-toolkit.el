@@ -70,12 +70,14 @@ If not select any area, then strip current buffer"
 (defun indent-buffer ()
   "Automatic format current buffer."
   (interactive)
-  (if (derived-mode-p 'python-mode)
-      (message "Don't indent python buffer, it will mess up the code syntax.")
+  (cond
+   ((derived-mode-p 'python-mode)
+    (message "Don't indent python buffer. It will mess up the code syntax."))
+   (t
     (save-excursion
       (indent-region (point-min) (point-max) nil)
       (delete-trailing-whitespace)
-      (untabify (point-min) (point-max)))))
+      (untabify (point-min) (point-max))))))
 
 (defun indent-comment-buffer ()
   "Indent comment of buffer."
@@ -296,9 +298,9 @@ Otherwise return nil."
   (scroll-down 1))
 
 (defun revert-buffer-no-confirm ()
-    "Revert buffer without confirmation."
-    (interactive)
-    (revert-buffer :ignore-auto :noconfirm))
+  "Revert buffer without confirmation."
+  (interactive)
+  (revert-buffer :ignore-auto :noconfirm))
 
 (defun cycle-buffer-in-special-mode (special-mode)
   "Cycle in special mode."
@@ -371,26 +373,26 @@ Otherwise return nil."
   (interactive)
   (if (= (count-windows) 2)
       (let* ((this-win-buffer (window-buffer))
-	     (next-win-buffer (window-buffer (next-window)))
-	     (this-win-edges (window-edges (selected-window)))
-	     (next-win-edges (window-edges (next-window)))
-	     (this-win-2nd (not (and (<= (car this-win-edges)
-					 (car next-win-edges))
-				     (<= (cadr this-win-edges)
-					 (cadr next-win-edges)))))
-	     (splitter
-	      (if (= (car this-win-edges)
-		     (car (window-edges (next-window))))
-		  'split-window-horizontally
-		'split-window-vertically)))
-	(delete-other-windows)
-	(let ((first-win (selected-window)))
-	  (funcall splitter)
-	  (if this-win-2nd (other-window 1))
-	  (set-window-buffer (selected-window) this-win-buffer)
-	  (set-window-buffer (next-window) next-win-buffer)
-	  (select-window first-win)
-	  (if this-win-2nd (other-window 1))))))
+             (next-win-buffer (window-buffer (next-window)))
+             (this-win-edges (window-edges (selected-window)))
+             (next-win-edges (window-edges (next-window)))
+             (this-win-2nd (not (and (<= (car this-win-edges)
+                                         (car next-win-edges))
+                                     (<= (cadr this-win-edges)
+                                         (cadr next-win-edges)))))
+             (splitter
+              (if (= (car this-win-edges)
+                     (car (window-edges (next-window))))
+                  'split-window-horizontally
+                'split-window-vertically)))
+        (delete-other-windows)
+        (let ((first-win (selected-window)))
+          (funcall splitter)
+          (if this-win-2nd (other-window 1))
+          (set-window-buffer (selected-window) this-win-buffer)
+          (set-window-buffer (next-window) next-win-buffer)
+          (select-window first-win)
+          (if this-win-2nd (other-window 1))))))
 
 (provide 'basic-toolkit)
 
