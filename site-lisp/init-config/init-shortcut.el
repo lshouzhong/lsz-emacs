@@ -69,10 +69,10 @@
 ;; ------ multiple cursors
 (lazy-load-global-keys
  '(
-   ("C-<" . mc/mark-previous-like-this)
-   ("C->" . mc/mark-next-like-this)
-   ("C-M-<" . mc/unmark-previous-like-this)
-   ("C-M->" . mc/unmark-next-like-this)
+   ("C-M-<" . mc/mark-previous-like-this)
+   ("C-M->" . mc/unmark-previous-like-this)
+   ("s-<" . mc/mark-next-like-this)
+   ("s->" . mc/unmark-next-like-this)
    ("C-s-," . mc/edit-beginnings-of-lines)
    ("s-S-<mouse-1>" . mc/add-cursor-on-click)
    )
@@ -130,7 +130,7 @@
  '(
    ("C-c e e" . toggle-echo-keys)
    ("C-c e c" . echo-keys-clean)
-  )
+   )
  "echo-keys")
 ;; --- evals
 (lazy-load-global-keys
@@ -142,11 +142,11 @@
 ;; - 手动控制四空格缩进
 (lazy-load-global-keys
  '(
-   ("C-," . lsz-un-indent)
-   ("C-." . lsz-indent)
+   ("C-<" . lsz-un-indent)
+   ("C->" . lsz-indent)
    )
  "force-indent")
- ;; --- goto-last-change
+;; --- goto-last-change
 ;; - 定位光标到最后编辑的地方
 (lazy-load-global-keys
  '(
@@ -162,11 +162,11 @@
 ;; --- move-and-duplicate-line
 (lazy-load-global-keys
  '(
-  ("M-p" . move-text-up)
-  ("M-n" . move-text-down)
-  ("C-c d" . duplicate-current-line-or-region)
-  ("C-c D" . duplicate-and-comment-current-line-or-region)
- )
+   ("M-p" . move-text-up)
+   ("M-n" . move-text-down)
+   ("C-c d" . duplicate-current-line-or-region)
+   ("C-c D" . duplicate-and-comment-current-line-or-region)
+   )
  "move-and-duplicate-text")
 ;; --- toggle-one-window
 ;; - 临时最大化当前窗口

@@ -5,13 +5,10 @@
 
 ;;; Code:
 
-;; unbind keys
-(define-key org-mode-map (kbd "C-,") nil)
-
 ;; turn on word-wrap in org-mode
 (add-hook 'org-mode-hook 'visual-line-mode)
 
-(defun lsz-org-buffer-update-modified-property ()
+(defun lsz-org-buffer-update-lastupdate-property ()
   "If '#+LASTUPDATE' is in org file, update it to the current date/time."
   (when (eq major-mode 'org-mode)
     (save-excursion
@@ -24,7 +21,7 @@
               (delete-region lastupdate-point (line-end-position)))
           (insert (format-time-string " %Y/%m/%d %H:%M")))))))
 
-(add-hook 'before-save-hook #'lsz-org-buffer-update-modified-property)
+(add-hook 'before-save-hook #'lsz-org-buffer-update-lastupdate-property)
 
 (setq org-startup-indented nil) ;; enable org-indent-mode at start, default nil.
 
@@ -166,7 +163,7 @@ MAKE FINAL HTML TO BE COMPATIBLE WITH highlight.js"
   (org-publish-all)
   ;; create sitemap for search engine
   (let (
-        ;; FULL PATH to doc root. Must end in a slash. Must not start with ~
+        ;; FULL PATH to doc root. MUST end with a slash.
         (lsz-site-pub-path-article-root "~/Public/lsz_org_article_publish/article/")
         ;; file name of sitemap file, relative to webroot.
         ;; file name format: <sitemap-file-name>.xml

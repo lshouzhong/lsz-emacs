@@ -21,8 +21,8 @@ The test for presence of the car of ELT-CONS is done with `equal'."
                     ("\\.stumpwmrc\\'" . lisp-mode)
                     ("\\.jl\\'" . lisp-mode)
                     ("\\.asdf\\'" . lisp-mode)
-                    ("\\.clj$" . clojure-mode)
-                    ("\\.exs$" . elixir-mode)
+                    ("\\.clj\\'" . clojure-mode)
+                    ("\\.exs\\'" . elixir-mode)
                     ("\\.[hg]s\\'" . haskell-mode)
                     ("\\.hi\\'" . haskell-mode)
                     ("\\.hs-boot\\'" . haskell-mode)
@@ -38,27 +38,27 @@ The test for presence of the car of ELT-CONS is done with `equal'."
                     ("\\.a90\\'" . intel-hex-mode)
                     ("\\.hex\\'" . intel-hex-mode)
 
-                    ("\\.py$" . python-mode)
+                    ("\\.py\\'" . python-mode)
                     ("SConstruct". python-mode)
 
-                    ("\\.lua$" . lua-mode)
+                    ("\\.lua\\'" . lua-mode)
 
-                    ("\\.go$" . go-mode)
+                    ("\\.go\\'" . go-mode)
 
                     ("\\.css\\'" . css-mode)
                     ("\\.wxss\\'" . css-mode)
 
                     ("\\.js.erb\\'" . js2-mode)
-                    ("\\.js$" . js2-mode)
-                    ("\\.wxs$" . js2-mode)
+                    ("\\.js\\'" . js2-mode)
+                    ("\\.wxs\\'" . js2-mode)
 
-                    ("\\.ts$" . typescript-mode)
-                    ("\\.tsx$" . typescript-mode)
+                    ("\\.ts\\'" . typescript-mode)
+                    ("\\.tsx\\'" . typescript-mode)
 
-                    ("\\.json$" . json-mode)
-                    ("\\.y[a]ml\\'" . yaml-mode)
+                    ("\\.json\\'" . json-mode)
+                    ("\\.ya?ml\\'" . yaml-mode)
 
-                    ("\\.pdf$" . pdf-view-mode)
+                    ("\\.pdf\\'" . pdf-view-mode)
 
                     ("\\.vue" . web-mode)
                     ("\\.wxml" . web-mode)
@@ -71,20 +71,20 @@ The test for presence of the car of ELT-CONS is done with `equal'."
                     ("\\.mustache\\'" . web-mode)
                     ("\\.djhtml\\'" . web-mode)
                     ("\\.html?\\'" . web-mode)
-                    ("\\.jsx$" . web-mode)
+                    ("\\.jsx\\'" . web-mode)
 
                     ("\\.iced\\'" . coffee-mode)
                     ("Cakefile\\'" . coffee-mode)
-                    ("\\.coffee$" . coffee-mode)
                     ("\\.coffee\\'" . coffee-mode)
-                    ("\\.iced$" . coffee-mode)
+                    ("\\.coffee\\'" . coffee-mode)
+                    ("\\.iced\\'" . coffee-mode)
                     ("Cakefile" . coffee-mode)
                     ("\\.coffee.erb\\'" . coffee-mode)
 
                     ;; ("\\.rs$" . rust-mode)
                     ("CMakeLists\\.txt\\'" . cmake-mode)
                     ("\\.cmake\\'" . cmake-mode)
-                    ("\\.ll$" . llvm-mode)
+                    ("\\.ll\\'" . llvm-mode)
                     ))
   (add-to-alist 'auto-mode-alist elt-cons))
 

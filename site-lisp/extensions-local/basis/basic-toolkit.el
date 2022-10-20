@@ -73,6 +73,8 @@ If not select any area, then strip current buffer"
   (cond
    ((derived-mode-p 'python-mode)
     (message "Don't indent python buffer. It will mess up the code syntax."))
+   ((derived-mode-p 'yaml-mode)
+    (message "Don't indent yaml buffer. It will mess up the code syntax."))
    (t
     (save-excursion
       (indent-region (point-min) (point-max) nil)
