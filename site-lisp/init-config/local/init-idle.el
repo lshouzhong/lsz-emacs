@@ -20,7 +20,6 @@
 (auto-compression-mode 1)               ;打开压缩文件时自动解压缩
 (setq read-quoted-char-radix 16)        ;设置 引用字符 的基数
 (setq global-mark-ring-max 1024)        ;设置最大的全局标记容量
-(global-hl-line-mode 1)                 ;高亮当前行
 (setq isearch-allow-scroll t)           ;isearch搜索时是可以滚动屏幕的
 (setq enable-recursive-minibuffers t)   ;minibuffer 递归调用命令
 (setq history-delete-duplicates t)      ;删除minibuffer的重复历史

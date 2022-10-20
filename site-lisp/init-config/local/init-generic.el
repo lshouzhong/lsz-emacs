@@ -31,6 +31,7 @@
 ;; but since emacs 28 user can use (use-short-answers t) to do it
 (fset 'yes-or-no-p 'y-or-n-p)
 
+(global-hl-line-mode t)                 ;; highlight current line
 (blink-cursor-mode -1)                  ;; cursor not blink
 (global-subword-mode 1)                 ;Word移动支持 FooBar 的格式
 (setq use-dialog-box nil)               ;; never pop dialog

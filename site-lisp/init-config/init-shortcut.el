@@ -114,6 +114,7 @@
    ("<f2>" . revert-buffer-no-confirm)  ;; reload file without confirm
    ("s-f" . find-file-root)             ;; open file in root
    ("s-r" . find-file-smb)              ;; visit sambao
+   ("C-c C-t" . toggle-fold-by-indent)
    )
  "basic-toolkit")
 ;; --- delete-block
@@ -159,6 +160,13 @@
    ("M-g r" . goto-line-preview)
    )
  "goto-line-preview")
+;; --- highlight-indentation
+(lazy-load-global-keys
+ '(
+   ("C-c h h" . highlight-indentation-mode)
+   ("C-c h c" . highlight-indentation-current-column-mode)
+   )
+ "highlight-indentation")
 ;; --- move-and-duplicate-line
 (lazy-load-global-keys
  '(
@@ -227,6 +235,7 @@
 ;; ------ other
 (lazy-load-set-keys
  '(
+   ("C-z r" . global-hl-line-mode)      ;; toggle global-hl-line-mode
    ("C-z l" . display-line-numbers-mode)
    ("s--" . text-scale-decrease)    ;; smaller fonts
    ("s-=" . text-scale-increase)    ;; bigger fonts

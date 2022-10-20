@@ -122,16 +122,37 @@
         (2 . (rainbow overline 1.1))
         (t . (semibold))))
 
-;; Load the theme files before enabling a theme
-(modus-themes-load-themes)
+(defun lsz-modus-operandi ()
+  "Light theme."
+  (interactive)
+  ;; load theme first
+  ;; otherwise modus-themes will override the face user had assigned
+  (modus-themes-load-operandi)
+  (set-face-attribute 'cursor nil :background "#6c246c"))
 
-;; Load the theme of your choice:
-(modus-themes-load-operandi) ;; OR (modus-themes-load-vivendi)
+(defun lsz-modus-vivendi ()
+  "Dark theme."
+  (interactive)
+  ;; load theme first
+  ;; otherwise modus-themes will override the face user had assigned
+  (modus-themes-load-vivendi))
+
+(defun lsz-modus-themes-toggle ()
+  (interactive)
+  (if (eq (car custom-enabled-themes) 'modus-operandi)
+      (lsz-modus-vivendi)
+    (lsz-modus-operandi)))
 
 (lazy-load-set-keys
  '(
-   ("<f6>" . modus-themes-toggle)
+   ("<f6>" . lsz-modus-themes-toggle)
    ))
+
+;; Load the theme files before enabling a theme
+(modus-themes-load-themes)
+
+;; active light theme
+(lsz-modus-operandi)
 
 (provide 'init-theme)
 

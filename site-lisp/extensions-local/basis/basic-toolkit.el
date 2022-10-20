@@ -396,6 +396,16 @@ Otherwise return nil."
           (select-window first-win)
           (if this-win-2nd (other-window 1))))))
 
+(defun toggle-fold-by-indent ()
+  "Toggle fold all lines which have larger indentation than current line."
+  (interactive)
+  (let ((col 1))
+    (save-excursion
+      (back-to-indentation)
+      (setq col (+ 1 (current-column)))
+      (set-selective-display
+       (if selective-display nil (or col 1))))))
+
 (provide 'basic-toolkit)
 
 ;;; basic-toolkit.el ends here
