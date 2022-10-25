@@ -9,7 +9,7 @@
 (setq dired-listing-switches "-alh1v --group-directories-first")
 
 ;; dired-subtree
-(setq dired-subtree-line-prefix "   ")
+(setq dired-subtree-line-prefix "    ")
 (setq dired-subtree-cycle-depth 3) ;; default `3'
 (setq dired-subtree-use-backgrounds nil) ;; default `t'
 ;; (set-face-attribute 'dired-subtree-depth-1-face nil :background "#ced9db")
