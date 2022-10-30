@@ -55,6 +55,8 @@ The test for presence of the car of ELT-CONS is done with `equal'."
                     ("\\.ts\\'" . typescript-mode)
                     ("\\.tsx\\'" . typescript-mode)
 
+                    ("nginx.conf\\'" . nginx-mode)
+                    ("/nginx/sites-\\(?:available\\|enabled\\)/" . nginx-mode)
                     ("\\.json\\'" . json-mode)
                     ("\\.ya?ml\\'" . yaml-mode)
 
@@ -99,6 +101,7 @@ The test for presence of the car of ELT-CONS is done with `equal'."
 (autoload 'js2-mode "js2-mode")
 (autoload 'lua-mode "init-lua")
 (autoload 'markdown-mode "init-markdown-mode")
+(autoload 'nginx-mode "init-nginx")
 (autoload 'python-mode "init-python")
 (autoload 'typescript-mode "typescript-mode")
 (autoload 'web-mode "web-mode")
