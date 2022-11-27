@@ -69,10 +69,10 @@
 ;; ------ multiple cursors
 (lazy-load-global-keys
  '(
-   ("C-M-<" . mc/mark-previous-like-this)
-   ("C-M->" . mc/unmark-previous-like-this)
-   ("s-<" . mc/mark-next-like-this)
-   ("s->" . mc/unmark-next-like-this)
+   ("C-M->" . mc/mark-next-like-this)
+   ("C-M-<" . mc/unmark-next-like-this)
+   ("s-<" . mc/mark-previous-like-this)
+   ("s->" . mc/unmark-previous-like-this)
    ("C-s-," . mc/edit-beginnings-of-lines)
    ("s-S-<mouse-1>" . mc/add-cursor-on-click)
    )
